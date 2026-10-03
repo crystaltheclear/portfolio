@@ -966,7 +966,7 @@ a.project{color:inherit;text-decoration:none}
     if (g) { if (current !== "detail") { g.cat = 0; g.preview = 0; } g.render(); }
     screens.forEach(s => { s.hidden = s.dataset.screen !== target; });
     // KOR/ENG switch only appears inside Designer / Content Creator (lists and project pages)
-    document.getElementById("lang-switch").hidden = !["works", "content", "detail"].includes(target);
+    document.getElementById("lang-switch").hidden = !["about", "works", "content", "detail"].includes(target);
     current = target;
     window.scrollTo(0, 0);
   }
