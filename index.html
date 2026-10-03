@@ -334,6 +334,15 @@ a.project{color:inherit;text-decoration:none}
 .bk-hs img{flex:none;width:calc(286 / 1440 * 100cqw);height:auto;display:block;scroll-snap-align:start;pointer-events:none;-webkit-user-drag:none}
 .bk-hs::-webkit-scrollbar{height:6px}.bk-hs::-webkit-scrollbar-thumb{background:#c9c9c9;border-radius:3px}
 
+
+/* Wide screens (>1440px): each slide's own background bleeds to the window edges, so no page colour shows beside the frames */
+.sl{--slbg:#fff}.sl-08{--slbg:#3c705d}.sl.bk-y{--slbg:#eff6ba}.sl.bk-c{--slbg:#fafaed}
+@media (min-width: 1441px){
+  #detail.is-slides .slides > .sl,#detail.is-slides .slides > .bk-img,#detail.is-slides .slides > .bk-hsl,#detail.is-slides .bk-scroll > .sl{
+    box-shadow:0 0 0 100vmax var(--slbg,#fff);clip-path:inset(0 -100vmax)}
+  #detail.is-slides .bk-scroll{overflow:visible}
+}
+
 @container (max-width: 900px){
   .bk-hsl{aspect-ratio:auto;padding:28px 0 32px}
   .bk-hs{position:static;width:auto;padding:0 20px 10px;gap:12px;scroll-padding-left:20px}
